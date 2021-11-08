@@ -44,6 +44,7 @@ class TodoMVC extends React.Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.onGetTodo}>异步获取新的todo</button>
         <input checked={this.state.checked} type="checkbox" onChange={() =>{this.toggleAll()}}/>
         <input onKeyPress={(e)=> {this.handleEnter(e)}} onChange={(e) => this.handleChange(e)} value={this.state.inputValue}></input>
         <ol>
@@ -83,6 +84,9 @@ const mapStateToProps = (state) => {
 // 把UI组件中使用的函数和action函数进行映射
 const mapDispatchToProps = (dispatch) => {
   return {
+    onGetTodo: () => {
+      dispatch(actions.getTodo())
+    },
     onAddTodo: (text) => {
       dispatch(actions.addTodo(text))
     },

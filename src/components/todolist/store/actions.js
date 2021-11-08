@@ -1,6 +1,17 @@
 import * as actionTypes from './constants'
 let nextTodoId = 0
 
+// 在这里实现异步操作，获取异步数据
+export const getTodo = () => {
+  return (dispatch) => {
+    setTimeout(() => {
+      const action = addTodo('12345')
+      dispatch(action)
+    }, 1000)
+  }
+}
+
+
 export const addTodo = (text) => ({
   type: actionTypes.ADD_TODO,
   id: nextTodoId++,
