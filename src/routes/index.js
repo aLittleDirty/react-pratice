@@ -4,6 +4,7 @@ import Context from '../components/context/index'
 import TicTacToe from  '../components/tic-tac-toe/index'
 import TodoList from '../components/todolist/index'
 import Home from '../pages/home/index'
+import MemoText from '../components/memoText/index'
 
 export default [
   {
@@ -28,6 +29,10 @@ export default [
       {
         path: '/todolist',
         component: TodoList
+      },
+      {
+        path: '/memoText',
+        component: MemoText
       }
     ]
   }
