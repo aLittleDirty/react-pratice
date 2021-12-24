@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 
 function Child (props) {
   const [childState, setChildState] = useState(0)
@@ -65,9 +65,15 @@ function MemoText () {
     console.log('i am the callback')
   }, [])
 
+  const memoState = useMemo(() => {
+    console.log('在修改state时才会触发该函数，并且是在渲染前调用，类似shouldComponentUpdate的时期')
+    return state
+  }, [state])
+
   return (
     <div>
       <span>我是memoText</span>
+      <span>{memoState}</span>
       <button onClick={setSameState}>重复赋值</button>
       <button onClick={setOtherState}>改变第一个子组件赋值</button>
       <button onClick={setOtherText}>改变第二个子组件赋值</button>
