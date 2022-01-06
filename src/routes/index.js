@@ -5,6 +5,9 @@ import TicTacToe from  '../components/tic-tac-toe/index'
 import TodoList from '../components/todolist/index'
 import Home from '../pages/home/index'
 import MemoText from '../components/memoText/index'
+import HookClosure from "../components/hook-closure";
+import ImperativeHandle from '../components/useImperativeHandle'
+
 
 export default [
   {
@@ -33,6 +36,14 @@ export default [
       {
         path: '/memoText',
         component: MemoText
+      },
+      {
+        path: '/hookClosure',
+        component: HookClosure
+      },
+      {
+        path: '/useImperativeHandle',
+        component: ImperativeHandle
       }
     ]
   }
